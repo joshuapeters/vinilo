@@ -1,2 +1,0 @@
-# vinilo
-Discogs competitor
