@@ -1,6 +1,6 @@
 using System;
 
-namespace Presentation.Web
+namespace Presentation.Api
 {
     public class WeatherForecast
     {
