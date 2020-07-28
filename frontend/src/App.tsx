@@ -1,6 +1,7 @@
 import * as React    from "react";
+import { HelloPage } from "@pages/hello-page";
+
 import "./sass/app.scss";
-import { HelloPage } from "./pages/hello-page";
 
 export const App = () => {
     return (

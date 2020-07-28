@@ -1,12 +1,21 @@
 {
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "outDir": "./dist/",
     "module": "commonjs",
     "target": "es5",
     "jsx": "react",
-    "noImplicitAny": true,
+    "lib": ["es6", "dom"],
+    "noImplicitAny": false,
     "noImplicitReturns": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "baseUrl": ".",
+    "experimentalDecorators": true,
+    "paths" : {
+      "@pages/*" :      ["./src/pages/*"],
+      "@components/*" : ["./src/components/*"],
+      "@core/*" :       ["./src/core/*"]
+    }
   },
   "exclude": [
     "node_modules"
