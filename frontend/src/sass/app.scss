@@ -1,0 +1,14 @@
+@import "00-Vendor/_vendor";
+@import "01-Settings/_settings";
+@import "02-Tools/_tools";
+@import "03-Generic/_generic";
+@import "04-Elements/_elements";
+@import "05-Objects/_objects";
+@import "06-Components/_components";
+@import "07-Trumps/_trumps";
+
+$body-color: red;
+
+body {
+  color: $body-color;
+}
