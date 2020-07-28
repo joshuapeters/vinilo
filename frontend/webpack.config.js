@@ -1,5 +1,6 @@
-const path = require("path");
-const webpack = require("webpack");
+const path                = require("path");
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+const webpack             = require("webpack");
 
 module.exports = {
     entry: "./src/index.tsx",
@@ -10,7 +11,17 @@ module.exports = {
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".ts", ".tsx", ".js"]
+        alias: {
+            "joi": "joi-browser",
+        },
+        extensions: [".js", ".tsx", ".ts"],
+        plugins: [
+            new TsconfigPathsPlugin({
+                configFile: "./tsconfig.json",
+                logLevel: "info",
+            })
+        ],
+        symlinks: false
     },
 
     module: {
@@ -19,7 +30,10 @@ module.exports = {
                 test: /\.ts(x?)$/,
                 use: [
                     {
-                        loader: "ts-loader"
+                        loader: "ts-loader",
+                        options: {
+                            configFile: "tsconfig.json"
+                        }
                     }
                 ]
             },
@@ -51,5 +65,5 @@ module.exports = {
         contentBase: path.join(__dirname, "public/"),
         port: 3000,
         publicPath: "http://localhost:3000/dist/"
-    }
+    },
 };
