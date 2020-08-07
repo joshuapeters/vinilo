@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Services", "01-Core\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.Api", "03-Presentation\Presentation.Api\Presentation.Api.csproj", "{E48E3D56-2C7A-46CB-AE37-A146A2570159}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.PostgreSQL", "02-Infrastructure\Infrastructure.PostgreSQL\Infrastructure.PostgreSQL.csproj", "{BD64BBAD-BF00-4021-A9E6-9FDD6A4F5715}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,7 @@ Global
 		{D42B0042-96A4-47C6-A739-9AC0268F2BC2} = {DF6AA0E8-9FC5-4226-BE9E-DCD1AE7A6A39}
 		{216E6A3B-E7CC-4727-8DDA-CD3D9BF2C12B} = {2751C8D1-87CA-47DA-B18B-5382005284F6}
 		{E48E3D56-2C7A-46CB-AE37-A146A2570159} = {B5BB6573-63FB-4F69-9631-3D2560723DC1}
+		{BD64BBAD-BF00-4021-A9E6-9FDD6A4F5715} = {DF6AA0E8-9FC5-4226-BE9E-DCD1AE7A6A39}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5602F003-A55D-4828-801C-46976A4F9AA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -88,5 +91,17 @@ Global
 		{E48E3D56-2C7A-46CB-AE37-A146A2570159}.Release|x64.Build.0 = Release|Any CPU
 		{E48E3D56-2C7A-46CB-AE37-A146A2570159}.Release|x86.ActiveCfg = Release|Any CPU
 		{E48E3D56-2C7A-46CB-AE37-A146A2570159}.Release|x86.Build.0 = Release|Any CPU
+		{BD64BBAD-BF00-4021-A9E6-9FDD6A4F5715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD64BBAD-BF00-4021-A9E6-9FDD6A4F5715}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD64BBAD-BF00-4021-A9E6-9FDD6A4F5715}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BD64BBAD-BF00-4021-A9E6-9FDD6A4F5715}.Debug|x64.Build.0 = Debug|Any CPU
+		{BD64BBAD-BF00-4021-A9E6-9FDD6A4F5715}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BD64BBAD-BF00-4021-A9E6-9FDD6A4F5715}.Debug|x86.Build.0 = Debug|Any CPU
+		{BD64BBAD-BF00-4021-A9E6-9FDD6A4F5715}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD64BBAD-BF00-4021-A9E6-9FDD6A4F5715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD64BBAD-BF00-4021-A9E6-9FDD6A4F5715}.Release|x64.ActiveCfg = Release|Any CPU
+		{BD64BBAD-BF00-4021-A9E6-9FDD6A4F5715}.Release|x64.Build.0 = Release|Any CPU
+		{BD64BBAD-BF00-4021-A9E6-9FDD6A4F5715}.Release|x86.ActiveCfg = Release|Any CPU
+		{BD64BBAD-BF00-4021-A9E6-9FDD6A4F5715}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
