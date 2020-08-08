@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Core.Interfaces.Data;
 using Infrastructure.PostgreSQL;
 using Microsoft.AspNetCore.Builder;
@@ -13,30 +14,37 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Presentation.Api.Extensions;
 
 namespace Presentation.Api
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        private readonly IConfigurationRoot _configuration;
+        private readonly IHostEnvironment   _environment;
 
-        public IConfiguration Configuration { get; }
+        public Startup(IHostEnvironment environment)
+        {
+            _environment = environment;
+
+            _configuration = new ConfigurationBuilder()
+                    .SetBasePath(environment.ContentRootPath)
+                    .AddJsonFile("appsettings.json", false, true)
+                    .AddJsonFile($"appsettings.{environment.EnvironmentName}.json", true)
+                    .Build();
+        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen();
 
             // Register Entity Framework Context
-            services.AddDbContext<ViniloContext>(
-                options => options.UseNpgsql(Configuration.GetConnectionString("ViniloContext"))
-            );
+            services.RegisterContexts(_configuration, _environment.EnvironmentName);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,6 +1,6 @@
 using System;
 using Core.Interfaces.Data;
-using Core.Models;
+using Core.Models.Entities.Albums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.PostgreSQL

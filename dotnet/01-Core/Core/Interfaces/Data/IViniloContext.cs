@@ -1,4 +1,4 @@
-using Core.Models;
+using Core.Models.Entities.Albums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Core.Interfaces.Data
