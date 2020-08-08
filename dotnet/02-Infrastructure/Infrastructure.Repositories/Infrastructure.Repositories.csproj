@@ -8,4 +8,8 @@
       <ProjectReference Include="..\..\01-Core\Core\Core.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="EFCore.BulkExtensions" Version="3.1.5" />
+    </ItemGroup>
+
 </Project>

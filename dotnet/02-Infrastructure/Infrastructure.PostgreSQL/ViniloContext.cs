@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.PostgreSQL
 {
-    public class ViniloContext :  DbContext, IViniloContext
+    public class ViniloContext :  Context, IViniloContext
     {
         #region PRIVATE MEMBERS
 
@@ -19,14 +19,6 @@ namespace Infrastructure.PostgreSQL
 
         #endregion
 
-        public ViniloContext(string connectionString)
-        {
-            _connectionString = connectionString;
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseNpgsql(_connectionString, options => options.EnableRetryOnFailure(3, TimeSpan.FromSeconds(30), null));
-        }
+        public ViniloContext(string connectionString) : base(connectionString) {}
     }
 }
