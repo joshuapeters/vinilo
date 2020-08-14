@@ -13,8 +13,7 @@ namespace Presentation.Api.Extensions
         {
             var connectionString = configuration["ConnectionStrings:ViniloContext"];
 
-            services.AddScoped<IViniloContext>(_ => new ViniloContext(connectionString));
-            services.AddScoped<IViniloContext>((sp) => new ViniloContext(connectionString));
+            services.AddEntityFrameworkNpgsql().AddScoped<IViniloContext>((sp) => new ViniloContext(connectionString));
 
             return services;
         }
