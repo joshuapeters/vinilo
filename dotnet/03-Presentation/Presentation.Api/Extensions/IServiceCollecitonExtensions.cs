@@ -11,9 +11,9 @@ namespace Presentation.Api.Extensions
             this IServiceCollection services, IConfigurationRoot configuration, string environmentName = "Development"
         )
         {
-            var connectionString = configuration["ConnectionStrings:Vinilo"];
+            var connectionString = configuration["ConnectionStrings:ViniloContext"];
 
-            services.AddDbContext<ViniloContext>(ServiceLifetime.Scoped);
+            services.AddScoped<IViniloContext>(_ => new ViniloContext(connectionString));
             services.AddScoped<IViniloContext>((sp) => new ViniloContext(connectionString));
 
             return services;

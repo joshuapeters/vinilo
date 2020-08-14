@@ -8,6 +8,7 @@ using Presentation.Api.Dtos.Albums;
 namespace Presentation.Api.Controllers.Api.v1
 {
     [ApiController]
+    [Route("api/[controller]")]
     public class AlbumController : ControllerBase
     {
         private readonly ILogger<AlbumController> _logger;
