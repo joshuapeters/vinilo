@@ -19,6 +19,9 @@ namespace Infrastructure.PostgreSQL
 
         #endregion
 
-        public ViniloContext(string connectionString) : base(connectionString) {}
+        public ViniloContext(string connectionString) : base(connectionString)
+        {
+            _connectionString = connectionString;
+        }
     }
 }
