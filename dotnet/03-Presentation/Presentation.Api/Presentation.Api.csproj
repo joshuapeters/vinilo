@@ -12,7 +12,9 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\01-Core\Core\Core.csproj" />
+      <ProjectReference Include="..\..\02-Infrastructure\Infrastructure.Conductors\Infrastructure.Conductors.csproj" />
       <ProjectReference Include="..\..\02-Infrastructure\Infrastructure.PostgreSQL\Infrastructure.PostgreSQL.csproj" />
+      <ProjectReference Include="..\..\02-Infrastructure\Infrastructure.Repositories\Infrastructure.Repositories.csproj" />
     </ItemGroup>
 
 

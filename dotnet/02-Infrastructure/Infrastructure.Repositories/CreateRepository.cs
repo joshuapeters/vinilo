@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using AndcultureCode.CSharp.Core;
@@ -14,21 +15,21 @@ namespace Infrastructure.Repositories
     public class CreateRepository<T> : ICreateRepository<T> where T : EntityBase
     {
         private readonly IContext  _context;
-        private readonly ILogger   _logger;
         private readonly DbContext _dbContext;
 
         public CreateRepository(
-            IContext context,
-            ILogger  logger
+            IContext context
         )
         {
             _context   = context;
             _dbContext = context as DbContext;
-            _logger    = logger;
         }
 
         public IResult<T> Create(T entity) => Do<T>.Try(r =>
         {
+            entity.CreatedOn = DateTimeOffset.Now;
+            entity.CreatedById = 1;
+
             _context.Add(entity);
             _context.DetectChanges(); // Note: New to EF Core, #SaveChanges, #Add and other methods do NOT automatically call DetectChanges
             _context.SaveChanges();
