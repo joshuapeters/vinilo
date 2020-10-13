@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AndcultureCode.CSharp.Core;
 using AndcultureCode.CSharp.Core.Interfaces;
+using AndcultureCode.CSharp.Core.Interfaces.Entity;
 using Core.Interfaces.Data;
 using Core.Interfaces.Repositories;
 using Core.Models.Entities;
@@ -27,8 +28,17 @@ namespace Infrastructure.Repositories
 
         public IResult<T> Create(T entity) => Do<T>.Try(r =>
         {
-            entity.CreatedOn = DateTimeOffset.Now;
-            entity.CreatedById = 1;
+            if (entity == null)
+            {
+                throw new ArgumentNullException(typeof(T).Name, "Given entity is null.");
+            }
+
+            if (entity is ICreatable)
+            {
+                ((ICreatable)entity).CreatedById = 1;
+
+                ((ICreatable)entity).CreatedOn = DateTimeOffset.UtcNow;
+            }
 
             _context.Add(entity);
             _context.DetectChanges(); // Note: New to EF Core, #SaveChanges, #Add and other methods do NOT automatically call DetectChanges
