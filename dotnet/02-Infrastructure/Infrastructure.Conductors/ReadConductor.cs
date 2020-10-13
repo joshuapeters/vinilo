@@ -13,16 +13,15 @@ namespace Infrastructure.Conductors
 {
     public class ReadConductor<T> : IReadConductor<T>
     {
-        private readonly ILogger             _logger;
         private readonly IReadRepository<T>  _readRepository;
         private readonly IFilterConductor<T> _filterConductor;
 
         public ReadConductor(
-            ILogger            logger,
-            IReadRepository<T> readRepository
+            IReadRepository<T> readRepository,
+            IFilterConductor<T> filterConductor
         )
         {
-            _logger         = logger;
+            _filterConductor = filterConductor;
             _readRepository = readRepository;
         }
 

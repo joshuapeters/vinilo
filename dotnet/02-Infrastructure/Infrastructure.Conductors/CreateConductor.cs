@@ -11,12 +11,10 @@ namespace Infrastructure.Conductors
     public class CreateConductor<T> : ICreateConductor<T>
     {
         private readonly ICreateRepository<T> _createRepository;
-        private readonly ILogger _logger;
 
-        public CreateConductor(ICreateRepository<T> createRepository, ILogger logger)
+        public CreateConductor(ICreateRepository<T> createRepository)
         {
             _createRepository = createRepository;
-            _logger           = logger;
         }
 
         public IResult<T> Create(T entity) => Do<T>.Try(r =>

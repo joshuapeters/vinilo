@@ -43,8 +43,11 @@ namespace Presentation.Api
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen();
 
+            services.RegisterConductors();
+            services.RegisterRepositories();
+
             // Register Entity Framework Context
-            services.RegisterContexts(_configuration, _environment.EnvironmentName);
+            services.RegisterContexts(_configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
