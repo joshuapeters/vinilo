@@ -7,16 +7,8 @@ namespace Infrastructure.PostgreSQL
 {
     public abstract class Context : DbContext, IContext
     {
-        private readonly string _connectionString;
-
-        protected Context(string connectionString)
+        protected Context(DbContextOptions<ViniloContext> contextOptions) : base(contextOptions)
         {
-            _connectionString = connectionString;
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseNpgsql(_connectionString, options => options.EnableRetryOnFailure(3, TimeSpan.FromSeconds(30), null));
         }
 
         public new void Add<T>(T entity) where T : class => base.Add(entity);

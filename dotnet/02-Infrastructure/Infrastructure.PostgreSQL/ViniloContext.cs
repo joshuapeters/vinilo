@@ -9,7 +9,6 @@ namespace Infrastructure.PostgreSQL
     {
         #region PRIVATE MEMBERS
 
-        private readonly string _connectionString;
 
         #endregion
 
@@ -19,9 +18,8 @@ namespace Infrastructure.PostgreSQL
 
         #endregion
 
-        public ViniloContext(string connectionString) : base(connectionString)
+        public ViniloContext(DbContextOptions<ViniloContext> contextOptions) : base(contextOptions)
         {
-            _connectionString = connectionString;
         }
     }
 }

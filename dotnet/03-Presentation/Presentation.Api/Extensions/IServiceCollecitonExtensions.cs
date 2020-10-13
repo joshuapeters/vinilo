@@ -1,5 +1,7 @@
+using System;
 using Core.Interfaces.Data;
 using Infrastructure.PostgreSQL;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,7 +15,9 @@ namespace Presentation.Api.Extensions
         {
             var connectionString = configuration["ConnectionStrings:ViniloContext"];
 
-            services.AddEntityFrameworkNpgsql().AddScoped<IViniloContext>((sp) => new ViniloContext(connectionString));
+            services.AddDbContext<ViniloContext>(options => options.UseNpgsql(connectionString));
+            services.AddScoped<IViniloContext, ViniloContext>();
+            services.AddScoped<DbContext, ViniloContext>();
 
             return services;
         }
