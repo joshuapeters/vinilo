@@ -12,9 +12,10 @@
     "baseUrl": ".",
     "experimentalDecorators": true,
     "paths" : {
-      "@pages/*" :      ["./src/pages/*"],
       "@components/*" : ["./src/components/*"],
-      "@core/*" :       ["./src/core/*"]
+      "@core/*" :       ["./src/core/*"],
+      "@pages/*" :      ["./src/pages/*"],
+      "@sass/*" :       ["./src/sass/*"]
     }
   },
   "exclude": [

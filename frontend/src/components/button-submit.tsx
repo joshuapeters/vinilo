@@ -1,12 +1,21 @@
-import * as React from "react";
+import * as React                   from "react";
+import { BUTTON_SIZE, BUTTON_TYPE } from "@core/enums/buttons/button-enums";
 
-export interface SubmitButton{
-    label: string;
+export interface SubmitButtonProps{
+    label:   string;
+    size:    BUTTON_SIZE;
+    type:    BUTTON_TYPE;
+    onClick: (args) => void;
 }
 
-export const SubmitButton = (props: SubmitButton) =>
+export const SubmitButton = (props: SubmitButtonProps) =>
 {
     return (
-        <button type="submit" className="btn btn-primary">{props.label}</button>
+        <button
+            className = { `button-submit ${props.type ?? "primary"} ${props.size ?? "small"}` }
+            onClick   = { props.onClick }
+            type      = "submit">
+                { props.label }
+        </button>
     );
 }
