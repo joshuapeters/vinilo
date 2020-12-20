@@ -1,5 +1,5 @@
 import * as React                   from "react";
-import { BUTTON_SIZE, BUTTON_TYPE } from "@core/enums/buttons/button-enums";
+import { BUTTON_SIZE, BUTTON_TYPE } from "@core/enums/components/buttons/button-enums";
 
 export interface SubmitButtonProps{
     label:   string;
