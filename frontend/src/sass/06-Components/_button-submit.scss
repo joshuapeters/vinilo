@@ -6,14 +6,22 @@
   line-height: 1;
 
   &.primary {
-    color: black;
-    background-color: #F5C516;
+    color: ghostwhite;
+    background-color: #E8712C;
+
+    &:hover {
+      background-color: #863E32;
+    }
   }
 
   &.secondary {
     color: #333;
     background-color: transparent;
     box-shadow: rgba(0, 0, 0, 0.15) 0 0 0 1px inset;
+
+    &:hover {
+      background-color: #d4d2d2;
+    }
   }
 
   &.small {

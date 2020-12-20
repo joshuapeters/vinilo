@@ -1,8 +1,8 @@
 import React, { ComponentProps } from 'react';
 import { Story, Meta }           from '@storybook/react/types-6-0';
 
-import { SubmitButton, SubmitButtonProps } from "../components/button-submit";
-import { BUTTON_SIZE, BUTTON_TYPE }        from "../core/enums/buttons/button-enums";
+import { SubmitButton, SubmitButtonProps } from "@components/button-submit";
+import { BUTTON_SIZE, BUTTON_TYPE }        from "@core/enums/buttons/button-enums";
 
 const ButtonLabel = "Submit";
 
