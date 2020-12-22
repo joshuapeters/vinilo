@@ -1,5 +1,5 @@
-import * as React                                 from "react";
-import { FunctionComponent, useEffect, useState } from "react";
+import * as React                                              from "react";
+import { ChangeEvent, FunctionComponent, useEffect, useState } from "react";
 
 export interface TextInputProps{
     label:         string;
@@ -14,12 +14,18 @@ export const TextInput:FunctionComponent<TextInputProps> = (props: TextInputProp
 
     useEffect(() => {
         props.onUpdate(value);
-    })
+    }, [value]);
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement>): void => setValue(e.target.value);
 
     return(
-            <div className="form-group">
-                <label htmlFor={props.id}>{props.label}</label>
-                <input id={props.id} type="email" className="form-control" onChange={this.setValue} value={this.value}/>
-            </div>
-        );
-    }
+        <div className="form-group">
+            <label htmlFor={props.id}>{props.label}</label>
+            <input
+                id        = { props.id }
+                type      = "email"
+                className = "form-control"
+                onChange  = { handleChange } value = { value }/>
+        </div>
+    );
+}
