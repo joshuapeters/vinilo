@@ -3,7 +3,7 @@ import { TextInput } from "@components/text-input";
 import { SubmitButton } from "@components/button-submit";
 import { PageHeader } from "@components/page-header";
 
-export const AlbumCurationPage = () => 
+export const AlbumCurationPage = () =>
 {
     return (
         <div>
@@ -18,6 +18,6 @@ export const AlbumCurationPage = () =>
                 </form>
             </div>
         </div>
-    ); 
+    );
 }
 

@@ -12,6 +12,7 @@
     "baseUrl": ".",
     "experimentalDecorators": true,
     "paths" : {
+      "@src/*" :        ["./src/*"],
       "@components/*" : ["./src/components/*"],
       "@core/*" :       ["./src/core/*"],
       "@pages/*" :      ["./src/pages/*"],

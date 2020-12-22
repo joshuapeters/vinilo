@@ -3,9 +3,9 @@ import { BUTTON_SIZE, BUTTON_TYPE } from "@core/enums/components/buttons/button-
 
 export interface SubmitButtonProps{
     label:   string;
-    size:    BUTTON_SIZE;
-    type:    BUTTON_TYPE;
-    onClick: (args) => void;
+    size?:    BUTTON_SIZE;
+    type?:    BUTTON_TYPE;
+    onClick?: (args) => void;
 }
 
 export const SubmitButton = (props: SubmitButtonProps) =>
