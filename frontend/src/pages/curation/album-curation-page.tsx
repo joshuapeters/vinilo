@@ -2,6 +2,7 @@ import * as React from "react";
 import { TextInput } from "@components/text-input";
 import { SubmitButton } from "@components/button-submit";
 import { PageHeader } from "@components/page-header";
+import { BUTTON_SIZE, BUTTON_TYPE } from "@core/enums/components/buttons/button-enums";
 
 export const AlbumCurationPage = () =>
 {
@@ -14,7 +15,7 @@ export const AlbumCurationPage = () =>
                     <TextInput label = "Album Name" id = "album-name" />
                     <TextInput label = "Catalog Number" id = "catalog-number" />
 
-                    <SubmitButton label = "Submit"/>
+                    <SubmitButton size = {BUTTON_SIZE.LARGE} type = {BUTTON_TYPE.PRIMARY} onClick = {() => true } label = "Submit"/>
                 </form>
             </div>
         </div>

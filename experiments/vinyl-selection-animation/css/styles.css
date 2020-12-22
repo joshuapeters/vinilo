@@ -1,0 +1,39 @@
+.main-container{
+    margin-top:15%;
+}
+
+.record1{
+    background-color:aliceblue;
+}
+.record2{
+    background-color:antiquewhite
+}
+.record3{
+    background-color:aqua;
+}
+.record4{
+    background-color:rosybrown;
+}
+.record5{
+    background-color:gold;
+}
+
+.vinyl-group{
+    transform: rotate(90deg);
+}
+
+p{
+    margin:0;
+    padding:0;
+}
+
+.spine{
+    position: relative; 
+    transition: right ease 0.3s;
+    right:0;
+
+}
+
+.spine:hover{ 
+    right: 55px;
+}
