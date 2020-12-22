@@ -1,6 +1,7 @@
 const path                = require("path");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const webpack             = require("webpack");
+const tsNameof            = require("ts-nameof");
 
 module.exports = {
     entry: "./src/index.tsx",
@@ -32,7 +33,8 @@ module.exports = {
                     {
                         loader: "ts-loader",
                         options: {
-                            configFile: "tsconfig.json"
+                            configFile:            "tsconfig.json",
+                            getCustomTransformers: () => ({ before: [tsNameof] })
                         }
                     }
                 ]
