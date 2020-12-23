@@ -233,3 +233,5 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+/frontend/public/bundle.js
+/frontend/public/bundle.js.map
