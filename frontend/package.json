@@ -5,7 +5,9 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "",
@@ -33,9 +35,14 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@types/jest": "^26.0.19",
     "axios": "^0.21.1",
+    "jest": "^26.6.3",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "ts-jest": "^26.4.4",
     "webpack-dev-server": "^3.11.0"
   }
 }
