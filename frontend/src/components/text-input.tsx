@@ -1,5 +1,6 @@
 import * as React                                              from "react";
 import { ChangeEvent, FunctionComponent, useEffect, useState } from "react";
+import { CoreUtilities }                                       from "@core/utilities/core-utilities";
 
 export interface TextInputProps{
     label:         string;
@@ -13,7 +14,8 @@ export const TextInput:FunctionComponent<TextInputProps> = (props: TextInputProp
     const [value, setValue] = useState(props.initialValue ?? "");
 
     useEffect(() => {
-        props.onUpdate(value);
+        if (CoreUtilities.isNotNullOrUndefined(props.onUpdate))
+            props.onUpdate(value);
     }, [value]);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>): void => setValue(e.target.value);

@@ -6,14 +6,16 @@ import { BUTTON_SIZE, BUTTON_TYPE } from "@core/enums/components/buttons/button-
 
 export const AlbumCurationPage = () =>
 {
+    const writeToConsole = (value: string) => console.log(value);
+
     return (
         <div>
             <PageHeader heading = "Add New Album"/>
             <div className="container">
                 <form>
-                    <TextInput label = "Artist Name" id = "artist-name" />
-                    <TextInput label = "Album Name" id = "album-name" />
-                    <TextInput label = "Catalog Number" id = "catalog-number" />
+                    <TextInput label = "Artist Name" id = "artist-name"       onUpdate = { writeToConsole }/>
+                    <TextInput label = "Album Name" id = "album-name"         onUpdate = { writeToConsole }/>
+                    <TextInput label = "Catalog Number" id = "catalog-number" onUpdate = { writeToConsole }/>
 
                     <SubmitButton size = {BUTTON_SIZE.LARGE} type = {BUTTON_TYPE.PRIMARY} onClick = {() => true } label = "Submit"/>
                 </form>
