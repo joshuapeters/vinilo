@@ -14,7 +14,9 @@
     "experimentalDecorators": true,
     "paths" : {
       "@src/*" :        ["./src/*"],
-      "@components/*" : ["./src/components/*"],
+      "@atoms/*" :      ["./src/atoms/*"],
+      "@molecules/*" :  ["./src/molecules/*"],
+      "@organisms/*" :  ["./src/organisms/*"],
       "@core/*" :       ["./src/core/*"],
       "@pages/*" :      ["./src/pages/*"],
       "@sass/*" :       ["./src/sass/*"]
